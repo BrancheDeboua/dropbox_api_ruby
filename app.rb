@@ -1,4 +1,3 @@
-require 'rubygems'
 require 'excon'
 require 'json'
 
@@ -14,5 +13,9 @@ result  = JSON.parse(r.data[:body])
 if result['metadata']
     p "poulet"
 else
-    p "felip"
+    if result['error_summary'] == 'path/conflict/folder/' || result['error_summary'] == 'path/conflict/folder/...' || result['error_summary'] == 'path/conflict/folder/.' || result['error_summary'] == 'path/conflict/folder/..'
+        p "Folder already exist!"
+    else
+        p result['error_summary']
+    end
 end
