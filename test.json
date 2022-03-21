@@ -1,0 +1,13 @@
+{
+    "cursor": { 
+        "session_id": "#{r.body['session_id']}", 
+        "offset": 0 
+    },
+    "commit": {
+        "path": "/Homework/ble.txt",
+        "mode": "add",
+        "autorename": true,
+        "mute": false,
+        "strict_conflict": false
+    }
+}
